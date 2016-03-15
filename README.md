@@ -1,3 +1,5 @@
 # vba_tools
 ## Usage
-個人用マクロブックにインポートして、タブにに追加して使う
+Imoport the bas file to to PERSONAL.XLSB
+C:\Users\UserName\AppData\Roaming\Microsoft\Excel\XLSTART\PERSONAL.XLSB
+
