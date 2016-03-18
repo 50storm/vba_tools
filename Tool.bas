@@ -68,7 +68,16 @@ Sub SetZoom()
 
     
     On Error Resume Next
+'    Dim strSheetName As String
+'    strSheetName = ActiveSheet.Name
+
+'    Dim index As Integer
+'    index = ActiveSheet.index
+'
+  
     myNum = Trim(Application.InputBox("Enter a number"))
+    
+    
     
     If CStr(myNum) = "" Then
     
@@ -85,7 +94,8 @@ Sub SetZoom()
          End If
     End If
     
-    ActiveSheet.Activate
+'    Worksheets(index).Active
+'    ActiveSheet.Activate
 End Sub
 
 
@@ -128,3 +138,84 @@ Sub ClearColorAndCmments()
     
     Call ClearColor
 End Sub
+
+Sub CombineAndAlignLeft()
+Attribute CombineAndAlignLeft.VB_ProcData.VB_Invoke_Func = "Q\n14"
+'
+' CombineAndAlignLeft Macro
+'
+
+'
+'    Range("I15:Y15").Select
+    With Selection
+'        .HorizontalAlignment = xlCenter
+        .WrapText = False
+        .Orientation = 0
+        .AddIndent = False
+        .IndentLevel = 0
+        .ShrinkToFit = False
+        .ReadingOrder = xlContext
+        .MergeCells = False
+    End With
+    Selection.Merge
+    With Selection
+        .HorizontalAlignment = xlLeft
+        .VerticalAlignment = xlTop
+        .WrapText = False
+        .Orientation = 0
+        .AddIndent = False
+        .IndentLevel = 0
+        .ShrinkToFit = False
+        .ReadingOrder = xlContext
+        .MergeCells = True
+    End With
+End Sub
+
+Sub SquareSLine()
+Attribute SquareSLine.VB_ProcData.VB_Invoke_Func = "E\n14"
+'
+' SquareSLine Macro
+'
+
+'
+'    Range("Z7").Select
+    Selection.Borders(xlDiagonalDown).LineStyle = xlNone
+    Selection.Borders(xlDiagonalUp).LineStyle = xlNone
+    With Selection.Borders(xlEdgeLeft)
+        .LineStyle = xlContinuous
+        .ColorIndex = 0
+        .TintAndShade = 0
+        .Weight = xlThin
+    End With
+    With Selection.Borders(xlEdgeTop)
+        .LineStyle = xlContinuous
+        .ColorIndex = 0
+        .TintAndShade = 0
+        .Weight = xlThin
+    End With
+    With Selection.Borders(xlEdgeBottom)
+        .LineStyle = xlContinuous
+        .ColorIndex = 0
+        .TintAndShade = 0
+        .Weight = xlThin
+    End With
+    With Selection.Borders(xlEdgeRight)
+        .LineStyle = xlContinuous
+        .ColorIndex = 0
+        .TintAndShade = 0
+        .Weight = xlThin
+    End With
+    With Selection.Borders(xlInsideVertical)
+        .LineStyle = xlContinuous
+        .ColorIndex = 0
+        .TintAndShade = 0
+        .Weight = xlThin
+    End With
+    With Selection.Borders(xlInsideHorizontal)
+        .LineStyle = xlContinuous
+        .ColorIndex = 0
+        .TintAndShade = 0
+        .Weight = xlThin
+    End With
+End Sub
+
