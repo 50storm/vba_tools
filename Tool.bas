@@ -219,3 +219,8 @@ Attribute SquareSLine.VB_ProcData.VB_Invoke_Func = "E\n14"
     End With
 End Sub
 
+Sub SaveAndClose()
+
+    ActiveWorkbook.Save
+    ActiveWorkbook.Close
+End Sub
