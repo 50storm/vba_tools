@@ -34,10 +34,21 @@ End Sub
 
 
 Sub SelectA1AndSave()
-
+On Error GoTo closeError
     Call SelectA1
-    ActiveWorkbook.Save
+    If ActiveWorkbook.Saved = False Then
+        ActiveWorkbook.Save
+    Else
+    End If
+closeError:
+    Exit Sub
+    
+End Sub
 
+
+Sub SelectA1SaveAndClose()
+    Call SelectA1AndSave
+    ActiveWorkbook.Close
 
 End Sub
 
@@ -220,7 +231,10 @@ Attribute SquareSLine.VB_ProcData.VB_Invoke_Func = "E\n14"
 End Sub
 
 Sub SaveAndClose()
-
+On Error GoTo closeError
     ActiveWorkbook.Save
     ActiveWorkbook.Close
+closeError:
+Exit Sub
+    
 End Sub
