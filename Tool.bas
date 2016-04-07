@@ -47,9 +47,12 @@ End Sub
 
 
 Sub SelectA1SaveAndClose()
+On Error GoTo closeError
     Call SelectA1AndSave
     ActiveWorkbook.Close
-
+closeError:
+    Exit Sub
+    
 End Sub
 
 
@@ -236,5 +239,12 @@ On Error GoTo closeError
     ActiveWorkbook.Close
 closeError:
 Exit Sub
+
+End Sub
     
+Sub InitScrollBar()
+    Call SelectA1
+
+    ActiveWindow.ScrollColumn = 1
+    ActiveWindow.ScrollRow = 1
 End Sub
